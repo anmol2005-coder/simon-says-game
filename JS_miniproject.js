@@ -12,15 +12,17 @@ h3.innerHTML = `<i>Highest Score : ${highestScore}</i>`;
 
 let h2 = document.querySelector("h2");
 
-document.addEventListener("keypress",function() {
-    if(started == false){
+
+document.body.addEventListener("click",startGame);   //mobile
+document.addEventListener("keypress",startGame);  //laptop
+
+function startGame(){
+      if(started == false){
         console.log("game is started");
         started = true;
         levelUp();
     }
-});
-
-
+}
 
 function gameFlash(btn){
     btn.classList.add("flash");
@@ -101,3 +103,4 @@ function reset() {
     userSeq = [];
     level = 0;
 }
+
