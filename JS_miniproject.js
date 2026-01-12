@@ -82,7 +82,8 @@ function checkAns(idx){
 }
 
 
-function btnPress(){
+function btnPress(event){
+    event.stopPropagation();
     let btn = this;
     userFlash(btn);
 
@@ -103,4 +104,5 @@ function reset() {
     userSeq = [];
     level = 0;
 }
+
 
